@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="harvest-plugin" default="usage" basedir=".">
+	
+	<path id="all-libs">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement location="bin"/>
+	</path>
+	
+	<target name="toogle-timer" description="Enciende el timer de la tarea por defecto si es que esta apagado y lo apaga si es que esta encendido">
+		<java classname="cl.continuum.harvest.console.Main">
+			<classpath refid="all-libs"/>
+			<arg line="-s"/>
+		</java>
+	</target>
+	
+</project>

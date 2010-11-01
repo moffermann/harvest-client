@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/apache-mime4j-0.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-nio-4.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-lgpl-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-mapper-lgpl-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
