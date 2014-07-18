@@ -36,9 +36,12 @@ public class Project extends AbstractSerializer implements Serializable {
 	private float over_budget_notification_percentage;
 	private String budget;
 	private String budget_by;
+    private String estimate_by;
 	private String basecamp_id;
 	private int active_task_assignments_count;
+    private String hint_latest_record_at;
 	private boolean active;
+    private String notes;
 	private List<Task> tasks;
 	
 	
@@ -233,6 +236,16 @@ public class Project extends AbstractSerializer implements Serializable {
 	}
 
 
+    public String getEstimate_by() {
+        return estimate_by;
+    }
+
+
+    public void setEstimate_by(String estimate_by) {
+        this.estimate_by = estimate_by;
+    }
+
+
 	public String getBasecamp_id() {
 		return basecamp_id;
 	}
@@ -253,7 +266,17 @@ public class Project extends AbstractSerializer implements Serializable {
 	}
 
 
-	public boolean isActive() {
+    public String getHint_latest_record_at() {
+        return hint_latest_record_at;
+    }
+
+
+    public void setHint_latest_record_at(String hint_latest_record_at) {
+        this.hint_latest_record_at = hint_latest_record_at;
+    }
+
+
+    public boolean isActive() {
 		return active;
 	}
 
@@ -261,7 +284,17 @@ public class Project extends AbstractSerializer implements Serializable {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
+
+
+    public String getNotes() {
+        return notes;
+    }
+
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
 	public String toString() {
 		return "[PROJECT] " + name + " ID: " + getId();
 	}
@@ -340,5 +373,4 @@ public class Project extends AbstractSerializer implements Serializable {
 	Project project = select();
 	System.out.println(project.getName());
 	}
-	
 }

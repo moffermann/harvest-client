@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 
 import org.apache.http.client.ClientProtocolException;
 
+import cl.continuum.harvest.Client;
 import cl.continuum.harvest.Daily;
 import cl.continuum.harvest.DayEntry;
 import cl.continuum.harvest.Project;
@@ -37,18 +38,21 @@ public class Main {
 	
 	private static final Map<String, Option> options = new HashMap<String, Option>();
 	
-	private static Project project = null;
+    private static Client client = null;
+    private static Project project = null;
 	private static Task task = null;
 	private static DayEntry dayEntry = null;
 	
 	
 	static {
-		Main.project = readObject(Project.class);
+        Main.client = readObject(Client.class);
+        Main.project = readObject(Project.class);
 		Main.task = readObject(Task.class);
 		Main.dayEntry = readObject(DayEntry.class);
 		
 		options.put("a", new Option('a', "Assign task to project", "assignTask"));
-		options.put("p", new Option('p', "Select project", "selectProject"));
+        options.put("c", new Option('c', "Select client", "selectClient"));
+        options.put("p", new Option('p', "Select project", "selectProject"));
 		options.put("t", new Option('t', "Select task from project", "selectTask"));
 		options.put("k", new Option('k', "List all tasks", "listTasks"));
 		options.put("s", new Option('s', "Stop/Start timer from actual dayentry", "toggleTimer"));
@@ -62,11 +66,16 @@ public class Main {
 		System.exit(0);
 	}
 	
-	public static void selectProject() throws IOException, ClassNotFoundException {
-		Main.project = Project.select();
-		writeObject(Main.project);
-	}
+    public static void selectProject() throws IOException, ClassNotFoundException {
+        Main.project = Project.select();
+        writeObject(Main.project);
+    }
 	
+    public static void selectClient() throws IOException, ClassNotFoundException {
+        Main.client = Client.select();
+        writeObject(Main.client);
+    }
+
 	public static void listTasks() throws IOException, ClassNotFoundException {
 		Main.task = Task.select();
 		writeObject(Main.task);
